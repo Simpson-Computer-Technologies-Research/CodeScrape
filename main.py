@@ -27,23 +27,26 @@ class Main:
         self.capture.release()
         cv2.destroyAllWindows()
     
-    # // Clean the code
+    # // Clean the code of any special characters
     def clean_code(self, code: str):
         for char in '\/=[]{)(}*|><.,?!@#$%^&*“':
             if char in code:
-                code = code[0:code.index(char)-1]+code[code.index(char)+1:len(code)]
+                code = code[:code.index(char)-1]+code[code.index(char)+1:]
         return code
     
     # // Check if valid code
     def check_code(self, _text:str):
-        text = (_text.strip()).replace(" ", "")
+        text = _text.replace(" ", "")
         if len(self.regex.sub('', _text)) > 10:
+            # // If there's no - in the code return false
             if "-" not in text:
                 return False
             
+            # // If any letters are lower return false
             if any(l.islower() for l in text):
                 return False
-                
+            
+            # // Check the length for each part of the code
             for l in text.split("-"):
                 if len(l.strip()) > 8:
                     return False
@@ -72,10 +75,9 @@ class Main:
                 self.frame_queue.put(image)
             sys.stdout.write(f"{i}: {time.time()-self.start_time}\n")
             
+            # // Start threads to search frame using pytesseract
             if i > iterations-2:
                 await start_threads(100, target=self.get_code_from_image)
-                while not self.frame_queue.empty():
-                    pass
                 if iteration_num < 10:
                     await self.start_program(iteration_num+1, status, image)
                     
