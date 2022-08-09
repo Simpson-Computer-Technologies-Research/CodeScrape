@@ -4,13 +4,26 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 # https://www.youtube.com/watch?v=WxHRKCgCtDM
 class Main:
     def __init__(self):
-        self.codes = []
+        self.codes = [] # // Array of scraped codes
+        self.frame_queue = queue.Queue() # // Queue for holding frames
+        self.regex = re.compile('[^a-zA-Z]') # // Regex for cleaning strings
+        
+        # // Youtube video
+        self.delete_youtube_video("default.mp4") # // Delete the previous video
+        self.download_youtube_video(input(" >> Video URL: ")) # // Get the youtube video from url
+        self.capture = cv2.VideoCapture("default.mp4") # // Load the downloaded video
+        
+        # // Frame counts, etc.
+        self.frame_count = self.get_video_frame_count(self.capture) # // Amount of frames in the video
+        self.iterations_max = self.frame_count/3000 # // Each queue holds 3000 frames
+        self.iterations = int(self.frame_count/self.iterations_max) # // Video Frame Count // 10
+        
+        # // Program start time
         self.start_time = time.time()
-        self.frame_queue = queue.Queue()
-        self.delete_youtube_video("default.mp4")
-        self.download_youtube_video(input(" >> Video URL: "))
-        self.capture = cv2.VideoCapture("default.mp4")
-        self.regex = re.compile('[^a-zA-Z]')
+        
+    # // Get the amount of frames in the video
+    def get_video_frame_count(self, capture):
+        return int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
 
     # // Delete the youtube video from pc
     def delete_youtube_video(self, name: str):
@@ -53,45 +66,47 @@ class Main:
             return text not in self.codes
         return False
     
-    # // Get the amount of frames in the video
-    def get_video_frame_count(self):
-        return int(self.capture.get(cv2.CAP_PROP_FRAME_COUNT))
-
     # // Read the frame
     def read_image(self, iteration: int):
         status, _image = self.capture.read()
-        image = cv2.cvtColor(_image, cv2.COLOR_BGR2GRAY)
         if iteration % 20 == 0:
             if status:
-                return image
+                return cv2.cvtColor(_image, cv2.COLOR_BGR2GRAY)
         return None
 
     # // Start the code claimer
     async def start_program(self, iteration_num:int, status:bool, image):
-        iterations = self.get_video_frame_count()//10
-        for i in range(iterations):
+        # // Go through the images frames, appending them to the frame_queue
+        for i in range(self.iterations):
             image = self.read_image(i)
             if image is not None:
                 self.frame_queue.put(image)
             sys.stdout.write(f"{i}: {time.time()-self.start_time}\n")
             
             # // Start threads to search frame using pytesseract
-            if i > iterations-2:
-                await start_threads(100, target=self.get_code_from_image)
-                if iteration_num < 10:
+            if i > self.iterations-2:
+                await start_threads(64, target=self.get_code_from_image)
+                if iteration_num < self.iterations_max:
                     await self.start_program(iteration_num+1, status, image)
                     
     # // Gets the code from the image
     def get_code_from_image(self):
         while not self.frame_queue.empty():
             frame = self.frame_queue.get()
-            _text:str = pytesseract.image_to_string(frame)
-            text = _text.replace("\n", "")
+            
+            # // Get the text from the frame
+            tess_text:str = pytesseract.image_to_string(frame)
+            
+            # // Get rid of all new lines in the 'tess_text'
+            text = tess_text.replace("\n", "")
+            
+            # // Find the codes and clean them
             for c in text.split(" "):
                 code = self.clean_code(c)
                 if self.check_code(code):
                     self.codes.append(code)
             sys.stdout.write(f"{self.frame_queue.qsize()}: {time.time()-self.start_time}: {self.codes}\n")
+
 
 # // Starts the threads
 async def start_threads(amount:int, target=None):
