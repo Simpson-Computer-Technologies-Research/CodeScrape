@@ -1,2 +1,19 @@
-# Video_Code_Scraper
+# Video Code Scraper ![Stars](https://img.shields.io/github/stars/realTristan/VideoCodeScraper?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/VideoCodeScraper?label=Watchers)
+![How_to_Prevent_Blacklisting_Banner](https://user-images.githubusercontent.com/75189508/186447028-16f54f66-803c-4b55-86b4-a79eecc487e8.jpeg)
+
+# About
+Scrapes Codes from the provided video
+
+# Showcase
 ![image](https://user-images.githubusercontent.com/75189508/183661462-1ad227ae-4317-4db9-94dd-817c03f253a5.png)
+
+# License
+MIT License
+
+Copyright (c) 2022 Tristan Simpson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
