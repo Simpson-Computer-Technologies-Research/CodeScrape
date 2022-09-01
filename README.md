@@ -1,4 +1,4 @@
-# Video Code Scraper ![Stars](https://img.shields.io/github/stars/realTristan/VideoCodeScraper?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/VideoCodeScraper?label=Watchers)
+# Video Code Scraper ![Stars](https://img.shields.io/github/stars/realTristan/CodeScrape?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/CodeScrape?label=Watchers)
 ![How_to_Prevent_Blacklisting_Banner](https://user-images.githubusercontent.com/75189508/186447028-16f54f66-803c-4b55-86b4-a79eecc487e8.jpeg)
 
 # About
