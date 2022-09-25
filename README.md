@@ -1,10 +1,12 @@
 # Video Code Scraper ![Stars](https://img.shields.io/github/stars/realTristan/CodeScrape?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/CodeScrape?label=Watchers)
-![How_to_Prevent_Blacklisting_Banner](https://user-images.githubusercontent.com/75189508/186447028-16f54f66-803c-4b55-86b4-a79eecc487e8.jpeg)
+![banner (1)](https://user-images.githubusercontent.com/75189508/192171490-e8aed07e-1300-4b55-811e-f55d76514047.png)
 
-# About
-Scrapes Codes from the provided video
+<h2>About</h2>
 
-# Showcase
+CodeScrape is an easy to use Python script that iterates over the frames in the provided youtube video and searches for redeemable codes. This project was intended for KSI's Try Not To Laugh Video Series.
+
+<h3>Showcase</h3>
+
 ![image](https://user-images.githubusercontent.com/75189508/183661462-1ad227ae-4317-4db9-94dd-817c03f253a5.png)
 
 # License
