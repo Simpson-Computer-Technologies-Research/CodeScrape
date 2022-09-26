@@ -10,7 +10,7 @@ CodeScrape is an easy to use Python script that iterates over the frames in the 
 ```rust
 >> Done!
 >> Total Time: 1.27m
->> Scraped Codes: ['UCUY-MQFWY3-NHB', 'UCUY-MQFWY3-NHBX', '‘SJ8R-GH2ZGV-RFB9', 'WWSR-AWYB9E-CQBE', 'CG2P-BU4VUC-RPBJ']
+>> Scraped Codes: ['UCUY-MQFWY3-NHB', 'UCUY-MQFWY3-NHBX', '‘SJ8R-GH2ZGV-RFB9', 'WWSR-AWYB9E-CQBE']
 ```
 
 # License
