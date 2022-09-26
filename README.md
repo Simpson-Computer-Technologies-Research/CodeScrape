@@ -1,5 +1,5 @@
 # Video Code Scraper ![Stars](https://img.shields.io/github/stars/realTristan/CodeScrape?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/CodeScrape?label=Watchers)
-![banner (1)](https://user-images.githubusercontent.com/75189508/192171490-e8aed07e-1300-4b55-811e-f55d76514047.png)
+![banner](https://user-images.githubusercontent.com/75189508/192171614-9e3e2d3b-e170-4bca-9993-d972140a4d91.png)
 
 <h2>About</h2>
 
