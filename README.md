@@ -7,7 +7,11 @@ CodeScrape is an easy to use Python script that iterates over the frames in the 
 
 <h3>Showcase</h3>
 
-![image](https://user-images.githubusercontent.com/75189508/183661462-1ad227ae-4317-4db9-94dd-817c03f253a5.png)
+```rust
+>> Done!
+>> Total Time: 1.27m
+>> Scraped Codes: ['UCUY-MQFWY3-NHB', 'UCUY-MQFWY3-NHBX', '‘SJ8R-GH2ZGV-RFB9', 'WWSR-AWYB9E-CQBE', 'CG2P-BU4VUC-RPBJ']
+```
 
 # License
 MIT License
