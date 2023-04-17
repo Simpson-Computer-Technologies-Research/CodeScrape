@@ -1,4 +1,4 @@
-# Video Code Scraper ![Stars](https://img.shields.io/github/stars/realTristan/CodeScrape?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/CodeScrape?label=Watchers)
+# Video Code Scraper ![Stars](https://img.shields.io/github/stars/Simpson-Computer-Technologies-Research/CodeScrape?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/Simpson-Computer-Technologies-Research/CodeScrape?label=Watchers)
 ![banner](https://user-images.githubusercontent.com/75189508/192171614-9e3e2d3b-e170-4bca-9993-d972140a4d91.png)
 
 <h2>About</h2>
